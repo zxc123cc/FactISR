@@ -1,0 +1,303 @@
+W0811 13:03:59.322000 140293270378304 torch/distributed/run.py:779] 
+W0811 13:03:59.322000 140293270378304 torch/distributed/run.py:779] *****************************************
+W0811 13:03:59.322000 140293270378304 torch/distributed/run.py:779] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0811 13:03:59.322000 140293270378304 torch/distributed/run.py:779] *****************************************
+08/11/2024 13:04:04 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+08/11/2024 13:04:04 - INFO - llamafactory.hparams.parser - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+08/11/2024 13:04:04 - WARNING - llamafactory.hparams.parser - `ddp_find_unused_parameters` needs to be set as False for LoRA in DDP training.
+08/11/2024 13:04:04 - INFO - llamafactory.hparams.parser - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, compute dtype: torch.bfloat16
+[INFO|tokenization_utils_base.py:2106] 2024-08-11 13:04:04,378 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2106] 2024-08-11 13:04:04,378 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2106] 2024-08-11 13:04:04,378 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2106] 2024-08-11 13:04:04,378 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2106] 2024-08-11 13:04:04,378 >> loading file tokenizer.json
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+08/11/2024 13:04:04 - INFO - llamafactory.data.template - Add <|user|>,<|observation|> to stop words.
+[WARNING|logging.py:314] 2024-08-11 13:04:04,871 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+08/11/2024 13:04:04 - INFO - llamafactory.data.template - Add <|user|>,<|observation|> to stop words.
+08/11/2024 13:04:04 - INFO - llamafactory.data.loader - Loading dataset Trending_DPO_Train_data.json...
+Generating train split: 1200 examples [00:00, 16398.63 examples/s]
+Converting format of dataset (num_proc=16): 100%|███████| 1000/1000 [00:00<00:00, 3670.06 examples/s]
+08/11/2024 13:04:06 - INFO - llamafactory.data.loader - Loading dataset Trending_DPO_Train_data.json...
+Running tokenizer on dataset (num_proc=16): 100%|█████████| 1000/1000 [00:15<00:00, 65.88 examples/s]
+training example:
+chosen_input_ids:
+[151331, 151333, 151336, 198, 98406, 99950, 100867, 111434, 99788, 100774, 120950, 100153, 3837, 106300, 99245, 102243, 98327, 117827, 103703, 102676, 100774, 1773, 698, 1, 113440, 99089, 100968, 103189, 5373, 102676, 102243, 99073, 100968, 103189, 117827, 3837, 103517, 99245, 102243, 98327, 117827, 3837, 103703, 101688, 100774, 3837, 100205, 100968, 103189, 99921, 125900, 14, 113068, 14, 102243, 100767, 109659, 110122, 1773, 698, 1, 99654, 3837, 99444, 100774, 98339, 111830, 102243, 98327, 117827, 98341, 1773, 698, 1, 100968, 103189, 98323, 5122, 106432, 103519, 102083, 98350, 99976, 99795, 98324, 101038, 106540, 105261, 3837, 98924, 99609, 98765, 98354, 98413, 105770, 98327, 101881, 99694, 99816, 698, 1, 102917, 102243, 98323, 5122, 98586, 102805, 113264, 3837, 98912, 98743, 99480, 14090, 2768, 8318, 105989, 101556, 110352, 4416, 34, 9904, 98891, 98643, 103186, 7552, 100052, 99962, 3837, 106432, 98590, 103519, 102083, 3837, 99103, 99976, 99795, 98324, 101038, 103186, 112313, 3407, 98711, 99480, 105989, 100052, 99962, 3837, 110352, 4416, 34, 98422, 107717, 99586, 9904, 99067, 101854, 105019, 7552, 99301, 5122, 117849, 5373, 98674, 98345, 98534, 5373, 106432, 5373, 102083, 5373, 103135, 3407, 14090, 2768, 8318, 105989, 101556, 100052, 99962, 3837, 101677, 3837, 106432, 110893, 101038, 99394, 106540, 105986, 119911, 99367, 13, 16, 4, 98314, 106022, 3837, 101854, 99795, 3837, 98396, 102083, 98548, 119911, 99366, 13, 16, 4, 105027, 106022, 3837, 98333, 16, 4, 98314, 103494, 105874, 98354, 106432, 1773, 106432, 101854, 98314, 101852, 98516, 99609, 98453, 98354, 3837, 107496, 98319, 102182, 98327, 106402, 99694, 99816, 3407, 100491, 3837, 103263, 116785, 98401, 104850, 105874, 98354, 103186, 112313, 117849, 98327, 100837, 108186, 98548, 98674, 98345, 98534, 1773, 117849, 98327, 98674, 98345, 98534, 98319, 110352, 106540, 99257, 111058, 98912, 100991, 103366, 101089, 3837, 100599, 121225, 105027, 106022, 103036, 100702, 13, 19, 4, 98327, 99590, 13, 21, 4, 3407, 100889, 3837, 98711, 100052, 99962, 3837, 98319, 110352, 4416, 34, 98422, 107717, 99586, 98322, 3837, 99539, 106432, 98327, 103135, 102312, 99816, 3407, 98346, 99920, 101193, 99567, 3837, 106432, 98319, 110352, 5373, 99974, 125836, 121371, 99788, 99041, 112968, 99586, 1773, 100491, 3837, 107496, 98319, 99920, 99148, 98912, 109424, 98324, 99586, 3407, 106432, 99630, 99127, 110352, 3837, 98426, 99127, 100254, 110352, 107566, 110144, 3837, 99301, 99962, 107942, 5373, 103143, 98327, 106467, 103186, 5373, 106065, 104746, 98327, 106540, 3407, 106432, 840, 79746, 107534, 2320, 444, 13808, 99693, 99127, 110352, 99343, 103186, 98555, 3837, 99035, 103186, 98555, 100254, 106432, 5373, 124487, 98327, 118951, 98314, 110352, 98322, 3407, 107496, 100808, 105989, 110352, 52174, 13764, 328, 98360, 5373, 52174, 13764, 328, 98360, 10, 98327, 52174, 13764, 328, 98360, 28116, 98401, 110973, 2320, 444, 13808, 109041, 103283, 103186, 98555, 840, 79746, 220, 24, 100067, 3407, 99409, 106432, 98361, 99694, 105734, 116615, 23, 101411, 118840, 3837, 98487, 100599, 98552, 102362, 5373, 101627, 118726, 99694, 1773, 107496, 99707, 103814, 98322, 100129, 110352, 98401, 98991, 840, 79746, 220, 102487, 16, 16, 98543, 840, 79746, 220, 24, 99695, 1773, 102675, 102236, 98604, 98991, 98674, 98345, 98534, 109346, 126367, 103186, 98555, 1773, 698, 1, 113623, 103703, 100774, 28213, 151337, 198, 102243, 99962, 3837, 106432, 103519, 102083, 99103, 99976, 99795, 98324, 101038, 103186, 112313, 3837, 112682, 101854, 98314, 101852, 98924, 99609, 98453, 98354, 98319, 102182, 98327, 106402, 99694, 99816, 3837, 107912, 99021, 105770, 98327, 101881, 99694, 99816, 1773, 99281, 3837, 98711, 103189, 98316, 110066, 1773, 151329]
+chosen_inputs:
+[gMASK] <sop> <|user|> 
+你是一个事实核查领域解释生成的专家，擅长根据证据和真实性生成相应的解释。"
+"我将提供当前说法、相应的证据以及当前说法真实性，你要根据证据和真实性，生成一段解释，说明当前说法为什么是对的/错的/证据不足或不充分的。"
+"注意，你的解释要严格按照证据和真实性来。"
+"当前说法为：三星超越苹果成全球第三大移动处理器厂商，主要归功于其在美国和中国的销售增长"
+"对应证据为：据国外媒体报道，市场研究机构Counterpoint Research发布的最新智能手机SoC（系统级芯片）报告显示，三星已超越苹果，成为全球第三大移动芯片制造商。
+
+该机构发布的报告显示，智能手机SoC前五大品牌（按排名顺序）包括：高通、联发科、三星、苹果、华为。
+
+Counterpoint Research发布的最新报告显示，去年，三星在全球移动应用处理器市场上占据了14.1%的份额，排名第三，而苹果公司占据了13.1%的市场份额，以1%的差距落后于三星。三星排名的上升可以归因于，该公司在印度和美国的销售增长。
+
+然而，这两家公司都远远落后于芯片制造商高通和台湾半导体公司联发科。高通和联发科在智能手机处理器这一细分市场处于领先地位，它们所占的市场份额分别为33.4%和24.6%。
+
+此外，该报告显示，在智能手机SoC前五大品牌中，只有三星和华为出现了增长。
+
+对许多消费者来说，三星在智能手机、电视和各种家用电器领域都是一个大品牌。然而，该公司在许多其他市场也是一个大品牌。
+
+三星不仅生产智能手机，还生产用于智能手机的各种零部件，包括显示面板、存储和内存芯片、相机传感器和处理器。
+
+三星Exynos品牌的System LSI业务生产智能手机处理芯片组，这些芯片组用于三星、魅族和vivo的智能手机中。
+
+该公司最近发布的智能手机Galaxy S20、Galaxy S20+和Galaxy S20 Ultra都使用了System LSI最新的高端芯片组Exynos 990。
+
+虽然三星也销售搭载骁龙865的手机，但它们只在中国、韩国和美国销售。该公司的大多数中档智能手机都使用Exynos 9611或Exynos 980。很少有机型使用联发科和高通的芯片组。"
+"请你生成解释：
+ <|assistant|> 
+证据显示，三星超越苹果成为全球第三大移动芯片制造商，但其排名的上升主要归因于在印度和美国的销售增长，而非仅在美国和中国的销售增长。因此，该说法是错误的。 <|endoftext|>
+chosen_label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 198, 102243, 99962, 3837, 106432, 103519, 102083, 99103, 99976, 99795, 98324, 101038, 103186, 112313, 3837, 112682, 101854, 98314, 101852, 98924, 99609, 98453, 98354, 98319, 102182, 98327, 106402, 99694, 99816, 3837, 107912, 99021, 105770, 98327, 101881, 99694, 99816, 1773, 99281, 3837, 98711, 103189, 98316, 110066, 1773, 151329]
+chosen_labels:
+
+证据显示，三星超越苹果成为全球第三大移动芯片制造商，但其排名的上升主要归因于在印度和美国的销售增长，而非仅在美国和中国的销售增长。因此，该说法是错误的。 <|endoftext|>
+rejected_input_ids:
+[151331, 151333, 151336, 198, 98406, 99950, 100867, 111434, 99788, 100774, 120950, 100153, 3837, 106300, 99245, 102243, 98327, 117827, 103703, 102676, 100774, 1773, 698, 1, 113440, 99089, 100968, 103189, 5373, 102676, 102243, 99073, 100968, 103189, 117827, 3837, 103517, 99245, 102243, 98327, 117827, 3837, 103703, 101688, 100774, 3837, 100205, 100968, 103189, 99921, 125900, 14, 113068, 14, 102243, 100767, 109659, 110122, 1773, 698, 1, 99654, 3837, 99444, 100774, 98339, 111830, 102243, 98327, 117827, 98341, 1773, 698, 1, 100968, 103189, 98323, 5122, 106432, 103519, 102083, 98350, 99976, 99795, 98324, 101038, 106540, 105261, 3837, 98924, 99609, 98765, 98354, 98413, 105770, 98327, 101881, 99694, 99816, 698, 1, 102917, 102243, 98323, 5122, 98586, 102805, 113264, 3837, 98912, 98743, 99480, 14090, 2768, 8318, 105989, 101556, 110352, 4416, 34, 9904, 98891, 98643, 103186, 7552, 100052, 99962, 3837, 106432, 98590, 103519, 102083, 3837, 99103, 99976, 99795, 98324, 101038, 103186, 112313, 3407, 98711, 99480, 105989, 100052, 99962, 3837, 110352, 4416, 34, 98422, 107717, 99586, 9904, 99067, 101854, 105019, 7552, 99301, 5122, 117849, 5373, 98674, 98345, 98534, 5373, 106432, 5373, 102083, 5373, 103135, 3407, 14090, 2768, 8318, 105989, 101556, 100052, 99962, 3837, 101677, 3837, 106432, 110893, 101038, 99394, 106540, 105986, 119911, 99367, 13, 16, 4, 98314, 106022, 3837, 101854, 99795, 3837, 98396, 102083, 98548, 119911, 99366, 13, 16, 4, 105027, 106022, 3837, 98333, 16, 4, 98314, 103494, 105874, 98354, 106432, 1773, 106432, 101854, 98314, 101852, 98516, 99609, 98453, 98354, 3837, 107496, 98319, 102182, 98327, 106402, 99694, 99816, 3407, 100491, 3837, 103263, 116785, 98401, 104850, 105874, 98354, 103186, 112313, 117849, 98327, 100837, 108186, 98548, 98674, 98345, 98534, 1773, 117849, 98327, 98674, 98345, 98534, 98319, 110352, 106540, 99257, 111058, 98912, 100991, 103366, 101089, 3837, 100599, 121225, 105027, 106022, 103036, 100702, 13, 19, 4, 98327, 99590, 13, 21, 4, 3407, 100889, 3837, 98711, 100052, 99962, 3837, 98319, 110352, 4416, 34, 98422, 107717, 99586, 98322, 3837, 99539, 106432, 98327, 103135, 102312, 99816, 3407, 98346, 99920, 101193, 99567, 3837, 106432, 98319, 110352, 5373, 99974, 125836, 121371, 99788, 99041, 112968, 99586, 1773, 100491, 3837, 107496, 98319, 99920, 99148, 98912, 109424, 98324, 99586, 3407, 106432, 99630, 99127, 110352, 3837, 98426, 99127, 100254, 110352, 107566, 110144, 3837, 99301, 99962, 107942, 5373, 103143, 98327, 106467, 103186, 5373, 106065, 104746, 98327, 106540, 3407, 106432, 840, 79746, 107534, 2320, 444, 13808, 99693, 99127, 110352, 99343, 103186, 98555, 3837, 99035, 103186, 98555, 100254, 106432, 5373, 124487, 98327, 118951, 98314, 110352, 98322, 3407, 107496, 100808, 105989, 110352, 52174, 13764, 328, 98360, 5373, 52174, 13764, 328, 98360, 10, 98327, 52174, 13764, 328, 98360, 28116, 98401, 110973, 2320, 444, 13808, 109041, 103283, 103186, 98555, 840, 79746, 220, 24, 100067, 3407, 99409, 106432, 98361, 99694, 105734, 116615, 23, 101411, 118840, 3837, 98487, 100599, 98552, 102362, 5373, 101627, 118726, 99694, 1773, 107496, 99707, 103814, 98322, 100129, 110352, 98401, 98991, 840, 79746, 220, 102487, 16, 16, 98543, 840, 79746, 220, 24, 99695, 1773, 102675, 102236, 98604, 98991, 98674, 98345, 98534, 109346, 126367, 103186, 98555, 1773, 698, 1, 113623, 103703, 100774, 28213, 151337, 198, 102243, 99962, 3837, 106432, 103519, 102083, 99103, 99976, 99795, 98324, 101038, 106540, 105261, 3837, 98924, 99609, 98765, 98354, 109408, 102182, 98327, 106402, 99694, 99816, 3837, 107912, 99207, 98327, 101881, 99694, 99816, 1773, 99281, 3837, 98711, 103189, 98316, 110066, 1773, 151329]
+rejected_inputs:
+[gMASK] <sop> <|user|> 
+你是一个事实核查领域解释生成的专家，擅长根据证据和真实性生成相应的解释。"
+"我将提供当前说法、相应的证据以及当前说法真实性，你要根据证据和真实性，生成一段解释，说明当前说法为什么是对的/错的/证据不足或不充分的。"
+"注意，你的解释要严格按照证据和真实性来。"
+"当前说法为：三星超越苹果成全球第三大移动处理器厂商，主要归功于其在美国和中国的销售增长"
+"对应证据为：据国外媒体报道，市场研究机构Counterpoint Research发布的最新智能手机SoC（系统级芯片）报告显示，三星已超越苹果，成为全球第三大移动芯片制造商。
+
+该机构发布的报告显示，智能手机SoC前五大品牌（按排名顺序）包括：高通、联发科、三星、苹果、华为。
+
+Counterpoint Research发布的最新报告显示，去年，三星在全球移动应用处理器市场上占据了14.1%的份额，排名第三，而苹果公司占据了13.1%的市场份额，以1%的差距落后于三星。三星排名的上升可以归因于，该公司在印度和美国的销售增长。
+
+然而，这两家公司都远远落后于芯片制造商高通和台湾半导体公司联发科。高通和联发科在智能手机处理器这一细分市场处于领先地位，它们所占的市场份额分别为33.4%和24.6%。
+
+此外，该报告显示，在智能手机SoC前五大品牌中，只有三星和华为出现了增长。
+
+对许多消费者来说，三星在智能手机、电视和各种家用电器领域都是一个大品牌。然而，该公司在许多其他市场也是一个大品牌。
+
+三星不仅生产智能手机，还生产用于智能手机的各种零部件，包括显示面板、存储和内存芯片、相机传感器和处理器。
+
+三星Exynos品牌的System LSI业务生产智能手机处理芯片组，这些芯片组用于三星、魅族和vivo的智能手机中。
+
+该公司最近发布的智能手机Galaxy S20、Galaxy S20+和Galaxy S20 Ultra都使用了System LSI最新的高端芯片组Exynos 990。
+
+虽然三星也销售搭载骁龙865的手机，但它们只在中国、韩国和美国销售。该公司的大多数中档智能手机都使用Exynos 9611或Exynos 980。很少有机型使用联发科和高通的芯片组。"
+"请你生成解释：
+ <|assistant|> 
+证据显示，三星超越苹果成为全球第三大移动处理器厂商，主要归功于其在印度和美国的销售增长，而非美国和中国的销售增长。因此，该说法是错误的。 <|endoftext|>
+rejected_label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 198, 102243, 99962, 3837, 106432, 103519, 102083, 99103, 99976, 99795, 98324, 101038, 106540, 105261, 3837, 98924, 99609, 98765, 98354, 109408, 102182, 98327, 106402, 99694, 99816, 3837, 107912, 99207, 98327, 101881, 99694, 99816, 1773, 99281, 3837, 98711, 103189, 98316, 110066, 1773, 151329]
+rejected_labels:
+
+证据显示，三星超越苹果成为全球第三大移动处理器厂商，主要归功于其在印度和美国的销售增长，而非美国和中国的销售增长。因此，该说法是错误的。 <|endoftext|>
+[INFO|configuration_utils.py:731] 2024-08-11 13:04:23,623 >> loading configuration file /mnt/user/luyifei/model_weight/glm4_trending_lora_sft/config.json
+[INFO|configuration_utils.py:731] 2024-08-11 13:04:23,628 >> loading configuration file /mnt/user/luyifei/model_weight/glm4_trending_lora_sft/config.json
+[INFO|configuration_utils.py:796] 2024-08-11 13:04:23,629 >> Model config ChatGLMConfig {
+  "_name_or_path": "/mnt/user/luyifei/model_weight/glm4_trending_lora_sft",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMForConditionalGeneration"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": [
+    151329,
+    151336,
+    151338
+  ],
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1.5625e-07,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 40,
+  "num_layers": 40,
+  "original_rope": true,
+  "pad_token_id": 151329,
+  "padded_vocab_size": 151552,
+  "post_layer_norm": true,
+  "rmsnorm": true,
+  "rope_ratio": 500,
+  "seq_length": 131072,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.41.2",
+  "use_cache": true,
+  "vocab_size": 151552
+}
+
+[INFO|modeling_utils.py:3471] 2024-08-11 13:04:23,676 >> loading weights file /mnt/user/luyifei/model_weight/glm4_trending_lora_sft/model.safetensors.index.json
+[INFO|modeling_utils.py:1519] 2024-08-11 13:04:23,678 >> Instantiating ChatGLMForConditionalGeneration model under default dtype torch.bfloat16.
+[INFO|configuration_utils.py:962] 2024-08-11 13:04:23,680 >> Generate config GenerationConfig {
+  "eos_token_id": [
+    151329,
+    151336,
+    151338
+  ],
+  "pad_token_id": 151329
+}
+
+Loading checkpoint shards: 100%|█████████████████████████████████████| 10/10 [01:21<00:00,  8.15s/it]
+08/11/2024 13:05:46 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+08/11/2024 13:05:46 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+08/11/2024 13:05:46 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+08/11/2024 13:05:46 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+08/11/2024 13:05:46 - INFO - llamafactory.model.model_utils.misc - Found linear modules: dense,query_key_value,dense_4h_to_h,dense_h_to_4h
+08/11/2024 13:05:46 - INFO - llamafactory.model.loader - trainable params: 21,176,320 || all params: 9,421,127,680 || trainable%: 0.2248
+Loading checkpoint shards: 100%|█████████████████████████████████████| 10/10 [01:24<00:00,  8.50s/it]
+[INFO|modeling_utils.py:4280] 2024-08-11 13:05:48,743 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+
+[INFO|modeling_utils.py:4288] 2024-08-11 13:05:48,743 >> All the weights of ChatGLMForConditionalGeneration were initialized from the model checkpoint at /mnt/user/luyifei/model_weight/glm4_trending_lora_sft.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use ChatGLMForConditionalGeneration for predictions without further training.
+[INFO|configuration_utils.py:915] 2024-08-11 13:05:48,746 >> loading configuration file /mnt/user/luyifei/model_weight/glm4_trending_lora_sft/generation_config.json
+[INFO|configuration_utils.py:962] 2024-08-11 13:05:48,747 >> Generate config GenerationConfig {
+  "do_sample": true,
+  "eos_token_id": [
+    151329,
+    151336,
+    151338
+  ],
+  "max_length": 128000,
+  "pad_token_id": 151329,
+  "temperature": 0.8,
+  "top_p": 0.8
+}
+
+08/11/2024 13:05:48 - INFO - llamafactory.model.model_utils.checkpointing - Gradient checkpointing enabled.
+08/11/2024 13:05:48 - INFO - llamafactory.model.model_utils.attention - Using torch SDPA for faster training and inference.
+08/11/2024 13:05:48 - INFO - llamafactory.model.adapter - Upcasting trainable params to float32.
+08/11/2024 13:05:48 - INFO - llamafactory.model.adapter - Fine-tuning method: LoRA
+08/11/2024 13:05:48 - INFO - llamafactory.model.model_utils.misc - Found linear modules: dense,dense_4h_to_h,query_key_value,dense_h_to_4h
+08/11/2024 13:05:49 - INFO - llamafactory.model.loader - trainable params: 21,176,320 || all params: 9,421,127,680 || trainable%: 0.2248
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[INFO|trainer.py:641] 2024-08-11 13:05:49,077 >> Using auto half precision backend
+[INFO|trainer.py:2078] 2024-08-11 13:05:49,834 >> ***** Running training *****
+[INFO|trainer.py:2079] 2024-08-11 13:05:49,834 >>   Num examples = 900
+[INFO|trainer.py:2080] 2024-08-11 13:05:49,834 >>   Num Epochs = 2
+[INFO|trainer.py:2081] 2024-08-11 13:05:49,834 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:2084] 2024-08-11 13:05:49,834 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:2085] 2024-08-11 13:05:49,834 >>   Gradient Accumulation steps = 8
+[INFO|trainer.py:2086] 2024-08-11 13:05:49,834 >>   Total optimization steps = 112
+[INFO|trainer.py:2087] 2024-08-11 13:05:49,837 >>   Number of trainable parameters = 21,176,320
+{'loss': 0.6927, 'grad_norm': 9.67550277709961, 'learning_rate': 4.166666666666667e-06, 'rewards/chosen': -0.0050765108317136765, 'rewards/rejected': -0.0055693406611680984, 'rewards/accuracies': 0.4375, 'rewards/margins': 0.0004928297712467611, 'logps/rejected': -23.73387908935547, 'logps/chosen': -17.972850799560547, 'logits/rejected': -0.8969331979751587, 'logits/chosen': -0.8942934274673462, 'epoch': 0.18}
+{'loss': 0.669, 'grad_norm': 9.210114479064941, 'learning_rate': 4.921457902821578e-06, 'rewards/chosen': -0.06793516129255295, 'rewards/rejected': -0.12400881201028824, 'rewards/accuracies': 0.6499999761581421, 'rewards/margins': 0.0560736358165741, 'logps/rejected': -22.950420379638672, 'logps/chosen': -16.24028968811035, 'logits/rejected': -0.9158626794815063, 'logits/chosen': -0.9133015871047974, 'epoch': 0.36}
+{'loss': 0.6177, 'grad_norm': 7.915415287017822, 'learning_rate': 4.610819813755038e-06, 'rewards/chosen': -0.33130350708961487, 'rewards/rejected': -0.5031933784484863, 'rewards/accuracies': 0.699999988079071, 'rewards/margins': 0.17188988626003265, 'logps/rejected': -28.05521583557129, 'logps/chosen': -19.98725128173828, 'logits/rejected': -0.8379371762275696, 'logits/chosen': -0.8385753631591797, 'epoch': 0.53}
+{'loss': 0.5746, 'grad_norm': 9.243627548217773, 'learning_rate': 4.093559974371725e-06, 'rewards/chosen': -0.5191274881362915, 'rewards/rejected': -0.8104090690612793, 'rewards/accuracies': 0.737500011920929, 'rewards/margins': 0.29128164052963257, 'logps/rejected': -29.944971084594727, 'logps/chosen': -21.48311996459961, 'logits/rejected': -0.8983451724052429, 'logits/chosen': -0.8944753408432007, 'epoch': 0.71}
+{'loss': 0.5124, 'grad_norm': 8.443159103393555, 'learning_rate': 3.4203113817116955e-06, 'rewards/chosen': -0.6210881471633911, 'rewards/rejected': -1.1123931407928467, 'rewards/accuracies': 0.800000011920929, 'rewards/margins': 0.49130502343177795, 'logps/rejected': -33.750450134277344, 'logps/chosen': -26.8550968170166, 'logits/rejected': -0.8548023104667664, 'logits/chosen': -0.8556475639343262, 'epoch': 0.89}
+{'loss': 0.4674, 'grad_norm': 7.821714878082275, 'learning_rate': 2.6569762988232838e-06, 'rewards/chosen': -0.698091983795166, 'rewards/rejected': -1.443932056427002, 'rewards/accuracies': 0.875, 'rewards/margins': 0.7458400130271912, 'logps/rejected': -37.94336700439453, 'logps/chosen': -25.01144790649414, 'logits/rejected': -0.9079121351242065, 'logits/chosen': -0.9063962697982788, 'epoch': 1.07}
+{'loss': 0.4072, 'grad_norm': 9.094444274902344, 'learning_rate': 1.8782752820878636e-06, 'rewards/chosen': -0.7742850184440613, 'rewards/rejected': -1.6757646799087524, 'rewards/accuracies': 0.8374999761581421, 'rewards/margins': 0.9014796018600464, 'logps/rejected': -37.45185089111328, 'logps/chosen': -23.609844207763672, 'logits/rejected': -0.8526861071586609, 'logits/chosen': -0.853862464427948, 'epoch': 1.24}
+{'loss': 0.3706, 'grad_norm': 6.475565433502197, 'learning_rate': 1.160433012552508e-06, 'rewards/chosen': -0.9727264642715454, 'rewards/rejected': -1.982305884361267, 'rewards/accuracies': 0.8374999761581421, 'rewards/margins': 1.0095794200897217, 'logps/rejected': -43.138954162597656, 'logps/chosen': -26.787853240966797, 'logits/rejected': -0.8962470889091492, 'logits/chosen': -0.8942239880561829, 'epoch': 1.42}
+{'loss': 0.3893, 'grad_norm': 7.517512798309326, 'learning_rate': 5.737168930605272e-07, 'rewards/chosen': -0.9891554117202759, 'rewards/rejected': -2.074702501296997, 'rewards/accuracies': 0.8500000238418579, 'rewards/margins': 1.0855472087860107, 'logps/rejected': -44.296424865722656, 'logps/chosen': -27.808757781982422, 'logits/rejected': -0.8937973976135254, 'logits/chosen': -0.8939879536628723, 'epoch': 1.6}
+{'loss': 0.3945, 'grad_norm': 8.14026165008545, 'learning_rate': 1.7555878527937164e-07, 'rewards/chosen': -0.9037601351737976, 'rewards/rejected': -1.9826877117156982, 'rewards/accuracies': 0.9125000238418579, 'rewards/margins': 1.0789273977279663, 'logps/rejected': -42.854042053222656, 'logps/chosen': -28.758590698242188, 'logits/rejected': -0.8712939023971558, 'logits/chosen': -0.8702966570854187, 'epoch': 1.78}
+{'loss': 0.3582, 'grad_norm': 8.110332489013672, 'learning_rate': 4.933178929321103e-09, 'rewards/chosen': -0.9509751200675964, 'rewards/rejected': -2.1229822635650635, 'rewards/accuracies': 0.887499988079071, 'rewards/margins': 1.1720072031021118, 'logps/rejected': -44.033409118652344, 'logps/chosen': -28.99165916442871, 'logits/rejected': -0.8830564618110657, 'logits/chosen': -0.8795859217643738, 'epoch': 1.96}
+100%|██████████████████████████████████████████████████████████████| 112/112 [14:51<00:00,  7.54s/it][INFO|trainer.py:2329] 2024-08-11 13:20:41,074 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+{'train_runtime': 891.2367, 'train_samples_per_second': 2.02, 'train_steps_per_second': 0.126, 'train_loss': 0.49438310680644854, 'epoch': 1.99}
+100%|██████████████████████████████████████████████████████████████| 112/112 [14:51<00:00,  7.96s/it]
+[INFO|trainer.py:3410] 2024-08-11 13:20:41,082 >> Saving model checkpoint to saves/glm4_Trending_dpo
+[INFO|configuration_utils.py:731] 2024-08-11 13:20:41,110 >> loading configuration file /mnt/user/luyifei/model_weight/glm4_trending_lora_sft/config.json
+[INFO|configuration_utils.py:796] 2024-08-11 13:20:41,110 >> Model config ChatGLMConfig {
+  "_name_or_path": "/mnt/user/luyifei/model_weight/glm4-9b-chat/glm-4-9b-chat",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMForConditionalGeneration"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": [
+    151329,
+    151336,
+    151338
+  ],
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1.5625e-07,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_hidden_layers": 40,
+  "num_layers": 40,
+  "original_rope": true,
+  "pad_token_id": 151329,
+  "padded_vocab_size": 151552,
+  "post_layer_norm": true,
+  "rmsnorm": true,
+  "rope_ratio": 500,
+  "seq_length": 131072,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.41.2",
+  "use_cache": true,
+  "vocab_size": 151552
+}
+
+[INFO|tokenization_utils_base.py:2513] 2024-08-11 13:20:41,260 >> tokenizer config file saved in saves/glm4_Trending_dpo/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2522] 2024-08-11 13:20:41,262 >> Special tokens file saved in saves/glm4_Trending_dpo/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2573] 2024-08-11 13:20:41,264 >> added tokens file saved in saves/glm4_Trending_dpo/added_tokens.json
+***** train metrics *****
+  epoch                    =      1.9911
+  total_flos               = 127277466GF
+  train_loss               =      0.4944
+  train_runtime            =  0:14:51.23
+  train_samples_per_second =        2.02
+  train_steps_per_second   =       0.126
+Figure saved at: saves/glm4_Trending_dpo/training_loss.png
+08/11/2024 13:20:41 - WARNING - llamafactory.extras.ploting - No metric eval_loss to plot.
+Figure saved at: saves/glm4_Trending_dpo/training_rewards_accuracies.png
+[INFO|trainer.py:3719] 2024-08-11 13:20:41,469 >> ***** Running Evaluation *****
+[INFO|trainer.py:3721] 2024-08-11 13:20:41,469 >>   Num examples = 100
+[INFO|trainer.py:3724] 2024-08-11 13:20:41,469 >>   Batch size = 1
+100%|████████████████████████████████████████████████████████████████| 50/50 [00:24<00:00,  2.06it/s]
+***** eval metrics *****
+  epoch                   =     1.9911
+  eval_logits/chosen      =    -0.9262
+  eval_logits/rejected    =    -0.9228
+  eval_logps/chosen       =   -24.9642
+  eval_logps/rejected     =   -43.9169
+  eval_loss               =     0.3814
+  eval_rewards/accuracies =       0.96
+  eval_rewards/chosen     =    -0.9545
+  eval_rewards/margins    =     1.0452
+  eval_rewards/rejected   =    -1.9996
+  eval_runtime            = 0:00:24.56
+  eval_samples_per_second =      4.071
+  eval_steps_per_second   =      2.036
+[INFO|modelcard.py:450] 2024-08-11 13:21:06,041 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
